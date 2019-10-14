@@ -1,4 +1,7 @@
-FROM ubuntu
-RUN mkdir /myvol
-RUN echo "hello world" > /myvol/greeting
-VOLUME /myvol
+FROM mariadb
+
+ENV MYSQL_ROOT_PASSWORD 123456
+
+RUN apt-get update 
+
+CMD ["mysqld"]
